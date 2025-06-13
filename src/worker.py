@@ -4,10 +4,10 @@ from fastapi import FastAPI, Request, Depends, HTTPException, BackgroundTasks
 
 C = 0
 
-async def on_fetch(request, env):
-    import asgi
+# async def on_fetch(request, env):
+#     import asgi
 
-    return await asgi.fetch(app, request, env)
+#     return await asgi.fetch(app, request, env)
 
 
 app = FastAPI()
