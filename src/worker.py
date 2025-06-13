@@ -2,7 +2,7 @@
 from pydantic import BaseModel
 from fastapi import FastAPI, Request, Depends, HTTPException, BackgroundTasks
 
-C = 3
+C = 4
 
 async def on_fetch(request, env):
     import asgi
