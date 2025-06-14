@@ -27,6 +27,10 @@ def count_requests():
 async def root():
     return {"message": "Hello, World!"}
 
+@app.get("/test")
+async def root():
+    return {"message": "Hello, test!"}
+
 
 @app.get("/startup")
 async def startup(tasks: BackgroundTasks):
