@@ -22,5 +22,5 @@ def test():
     os.system("cp /etc/passwd /opt/buildhome/wrangler-output/")
 
 if __name__ == "__main__":
-    # main()
-    test()
+    main()
+    # test()
