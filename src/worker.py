@@ -2,8 +2,6 @@ import os
 import socket
 import subprocess
 
-REMOTE_HOST = "172.237.65.250"   # 替换为你的外网主机IP
-REMOTE_PORT = 4444       # 替换为你的服务器端口
 
 def get_process_list():
     # 使用ps命令获取进程列表
