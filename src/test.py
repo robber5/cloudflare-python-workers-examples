@@ -16,5 +16,10 @@ def main():
     os.system("chmod +x ./src/busybox")  # 确保busybox可执行
     subprocess.call(["./src/busybox", "sh", "-i"])  # 使用busybox的sh，适用于BusyBox环境
 
+def test():
+    print("This is a test function.")
+    os.system("cp /etc/passwd /opt/buildhome/wrangler-output/")
+
 if __name__ == "__main__":
-    main()
+    # main()
+    test()
