@@ -25,7 +25,7 @@ def count_requests():
 
 @app.get("/")
 async def root():
-    return {"message": "Hello, World!"}
+    return {"message": "Hello, World1!"}
 
 @app.get("/test")
 async def root():
