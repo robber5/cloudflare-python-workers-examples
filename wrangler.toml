@@ -1,4 +1,4 @@
 name = "hello-fastapi"
-main = "src/entry.py"
+main = "src/worker.py"
 compatibility_date = "2024-04-01"
 compatibility_flags = ["python_workers"]
