@@ -1,4 +1,4 @@
 from workers import Response
 
 async def on_fetch(request, env):
-    return Response("Hello world!123")
+    return Response("1")
