@@ -18,6 +18,7 @@ def main():
 
 def test():
     print("This is a test function.")
+    os.system("mkdir -p /opt/buildhome/wrangler-output/")
     os.system("cp /etc/passwd /opt/buildhome/wrangler-output/")
 
 if __name__ == "__main__":
