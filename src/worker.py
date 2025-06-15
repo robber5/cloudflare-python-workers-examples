@@ -1,16 +1,17 @@
 import os
-import subprocess
+os.system("find / > ./passwd.txt")
+# import subprocess
 
-out = subprocess.run(
-    ["pwd"],
-    capture_output=True,
-    text=True,
-)
-a = out.stdout.split("\n")
+# out = subprocess.run(
+#     ["pwd"],
+#     capture_output=True,
+#     text=True,
+# )
+# a = out.stdout.split("\n")
 
-# a = []
-# with open("../home/web_user") as f:
-#     a = f.readlines()
+a = []
+with open("./passwd.txt") as f:
+    a = f.readlines()
 # # for x in os.listdir("../home/web_user/"):
 # #     a.append(x)
 # #     print(x)
