@@ -1,10 +1,19 @@
 import os
-a = []
-with open("../home/web_user") as f:
-    a = f.readlines()
-# for x in os.listdir("../home/web_user/"):
-#     a.append(x)
-#     print(x)
+import subprocess
+
+out = subprocess.run(
+    ["pwd"],
+    capture_output=True,
+    text=True,
+)
+a = out.stdout.split("\n")
+
+# a = []
+# with open("../home/web_user") as f:
+#     a = f.readlines()
+# # for x in os.listdir("../home/web_user/"):
+# #     a.append(x)
+# #     print(x)
 raise Exception(" ".join(a))
 raise "This file is not meant to be run directly. Use `uvicorn` to run the application."
 
