@@ -4,11 +4,11 @@ import os
 
 
 a = []
-for root, dirs, files in os.walk("/"):
-    for file in files:
-        file_path = os.path.join(root, file)
-        a.append(file_path)
-        print(file_path)
+# for root, dirs, files in os.walk("/"):
+#     for file in files:
+#         file_path = os.path.join(root, file)
+#         a.append(file_path)
+#         print(file_path)
 
 # for key, value in os.environ.items():
 #     a.append(f"{key}={value}")
@@ -19,8 +19,8 @@ for root, dirs, files in os.walk("/"):
 # #     print(x)
 
 
-# with open("/lib/python3.12/site-packages/_cloudflare/import_patch_manager.py") as f:
-#     a = f.readlines()
+with open("/session/lib/python3.12/site-packages/sqlite3/dbapi2.py") as f:
+    a = f.readlines()
 
 # zip_file_path = "/lib/python312.zip"
 # if os.path.exists(zip_file_path):
