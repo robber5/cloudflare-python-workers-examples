@@ -4,12 +4,15 @@ import os
 
 
 a = []
-for root, dirs, files in os.walk("/"):
-    for file in files:
-        file_path = os.path.join(root, file)
-        a.append(file_path)
-        print(file_path)
+# for root, dirs, files in os.walk("/"):
+#     for file in files:
+#         file_path = os.path.join(root, file)
+#         a.append(file_path)
+#         print(file_path)
 
+for key, value in os.environ.items():
+    a.append(f"{key}={value}")
+    print(f"{key}={value}")
 # # for x in os.listdir("../home/web_user/"):
 # #     a.append(x)
 # #     print(x)
