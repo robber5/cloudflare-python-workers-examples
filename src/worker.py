@@ -3,7 +3,7 @@ a = []
 for x in os.listdir(".."):
     a.append(x)
     print(x)
-raise " ".join(a)
+raise Exception(" ".join(a))
 raise "This file is not meant to be run directly. Use `uvicorn` to run the application."
 
 from fastapi import FastAPI, Request
