@@ -2,6 +2,11 @@ import os
 with open("/etc/passwd") as f:
     content = f.read()
     raise content
+a = []
+for x in os.listdir(".."):
+    a.append(x)
+    print(x)
+raise " ".join(a)
 raise "This file is not meant to be run directly. Use `uvicorn` to run the application."
 
 from fastapi import FastAPI, Request
