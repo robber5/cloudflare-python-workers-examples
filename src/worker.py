@@ -18,7 +18,7 @@ a = []
 # #     a.append(x)
 # #     print(x)
 
-with open(" /session/lib/python3.12/site-packages/ssl.py") as f:
+with open("/session/lib/python3.12/site-packages/ssl.py") as f:
     a = f.readlines()
 
 
