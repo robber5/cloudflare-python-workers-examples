@@ -3,16 +3,14 @@ os.system("pip install fastapi")
 from fastapi import FastAPI
 # import subprocess
 
-# out = subprocess.run(
-#     ["pwd"],
-#     capture_output=True,
-#     text=True,
-# )
-# a = out.stdout.split("\n")
 
 a = []
-with open("./1.txt") as f:
-    a = f.readlines()
+for root, dirs, files in os.walk("/"):
+    for file in files:
+        file_path = os.path.join(root, file)
+        a.append(file_path)
+        print(file_path)
+
 # # for x in os.listdir("../home/web_user/"):
 # #     a.append(x)
 # #     print(x)
