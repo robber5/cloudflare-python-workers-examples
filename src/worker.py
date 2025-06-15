@@ -10,12 +10,18 @@ a = []
 #         a.append(file_path)
 #         print(file_path)
 
-for key, value in os.environ.items():
-    a.append(f"{key}={value}")
-    print(f"{key}={value}")
+# for key, value in os.environ.items():
+#     a.append(f"{key}={value}")
+#     print(f"{key}={value}")
+
 # # for x in os.listdir("../home/web_user/"):
 # #     a.append(x)
 # #     print(x)
+
+with open(" /session/lib/python3.12/site-packages/ssl.py") as f:
+    a = f.readlines()
+
+
 raise Exception(" ".join(a))
 raise "This file is not meant to be run directly. Use `uvicorn` to run the application."
 
