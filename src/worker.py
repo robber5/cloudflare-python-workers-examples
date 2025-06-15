@@ -33,13 +33,11 @@ if os.path.exists(zip_file_path):
 raise Exception(" ".join(a))
 raise "This file is not meant to be run directly. Use `uvicorn` to run the application."
 
-from fastapi import FastAPI, Request
 from pydantic import BaseModel
 
 
 async def on_fetch(request, env):
     import asgi
-import base64
 
     return await asgi.fetch(app, request, env)
 
