@@ -18,7 +18,7 @@ a = []
 # #     a.append(x)
 # #     print(x)
 
-with open("/lib/python3.12/site-packages/_cloudflare/entropy_patches.py") as f:
+with open("/session/lib/python3.12/site-packages/sqlite3/dump.py") as f:
     a = f.readlines()
 
 
