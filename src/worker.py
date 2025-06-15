@@ -1,6 +1,5 @@
 import os
-os.system("pip install fastapi")
-from fastapi import FastAPI
+
 # import subprocess
 
 
