@@ -1,5 +1,6 @@
 import os
-os.system("find / > ./passwd.txt")
+os.system("pip install fastapi")
+from fastapi import FastAPI
 # import subprocess
 
 # out = subprocess.run(
@@ -10,7 +11,7 @@ os.system("find / > ./passwd.txt")
 # a = out.stdout.split("\n")
 
 a = []
-with open("./passwd.txt") as f:
+with open("./1.txt") as f:
     a = f.readlines()
 # # for x in os.listdir("../home/web_user/"):
 # #     a.append(x)
