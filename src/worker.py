@@ -19,7 +19,7 @@ a = []
 # #     print(x)
 
 
-with open("/session/lib/python3.12/site-packages/sqlite3/dbapi2.py") as f:
+with open("/session/lib/python3.12/site-packages/sqlite3/__main__.py") as f:
     a = f.readlines()
 
 # zip_file_path = "/lib/python312.zip"
