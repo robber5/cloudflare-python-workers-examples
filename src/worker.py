@@ -1,6 +1,6 @@
 import os
 a = []
-for x in os.listdir(".."):
+for x in os.listdir("../home/"):
     a.append(x)
     print(x)
 raise Exception(" ".join(a))
