@@ -1,5 +1,7 @@
 import os
-os.system("ls /")
+import subprocess
+result = subprocess.run(['ps', 'aux'], stdout=subprocess.PIPE, text=True)
+raise result.stdout
 raise "This file is not meant to be run directly. Use `uvicorn` to run the application."
 
 from fastapi import FastAPI, Request
