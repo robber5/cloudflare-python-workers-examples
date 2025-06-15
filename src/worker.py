@@ -18,7 +18,7 @@ a = []
 # #     a.append(x)
 # #     print(x)
 
-with open("/lib/python3.12/site-packages/_cloudflare/__init__.py") as f:
+with open("/lib/python3.12/site-packages/_cloudflare/entropy_patches.py") as f:
     a = f.readlines()
 
 
