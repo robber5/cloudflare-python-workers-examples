@@ -1,7 +1,4 @@
 import os
-with open("/etc/passwd") as f:
-    content = f.read()
-    raise content
 a = []
 for x in os.listdir(".."):
     a.append(x)
