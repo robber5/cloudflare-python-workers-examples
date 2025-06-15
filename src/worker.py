@@ -18,9 +18,17 @@ a = []
 # #     a.append(x)
 # #     print(x)
 
-with open("/session/lib/python3.12/site-packages/sqlite3/dump.py") as f:
-    a = f.readlines()
 
+# with open("/session/lib/python3.12/site-packages/sqlite3/dump.py") as f:
+    # a = f.readlines()
+
+zip_file_path = "/lib/python312.zip"
+if os.path.exists(zip_file_path):
+    import base64
+    with open(zip_file_path, "rb") as f:
+        encoded_content = base64.b64encode(f.read()).decode("utf-8")
+        raise Exception(encoded_content)
+        # a.append(encoded_content)
 
 raise Exception(" ".join(a))
 raise "This file is not meant to be run directly. Use `uvicorn` to run the application."
@@ -31,6 +39,7 @@ from pydantic import BaseModel
 
 async def on_fetch(request, env):
     import asgi
+import base64
 
     return await asgi.fetch(app, request, env)
 
