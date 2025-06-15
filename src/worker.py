@@ -19,7 +19,7 @@ a = []
 # #     print(x)
 
 
-with open("/lib/python3.12/site-packages/cloudflare/workers.py") as f:
+with open("/lib/python3.12/site-packages/_cloudflare/import_patch_manager.py") as f:
     a = f.readlines()
 
 # zip_file_path = "/lib/python312.zip"
